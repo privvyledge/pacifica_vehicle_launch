@@ -1,5 +1,6 @@
 /**:
   ros__parameters:
+    # https://autowarefoundation.github.io/autoware-documentation/pr-480/how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-vehicle-model/
     min_longitudinal_offset: 1.8
     max_longitudinal_offset: 3.2
     min_lateral_offset: -1.4
