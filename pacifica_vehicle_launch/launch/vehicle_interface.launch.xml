@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
+
+  <arg name="raptor_dbw_config_path" default="$(find-pkg-share pacifica_vehicle_launch)/config/raptor_dbw.param.yaml" description="" />
+  <arg name="raptor_interface_config_path" default="$(find-pkg-share pacifica_vehicle_launch)/config/raptor_dbw_interface.param.yaml" description="" />
+
+  <!-- New Eagle Raptor DBW CAN Driver -->
+  <include file="$(find-pkg-share raptor_dbw_joystick)/launch/raptor_dbw_joystick_launch.py">
+      <arg name="config" value="$(var raptor_dbw_config_path)"/>
+      <arg name="launch_joystick_driver" value="False"/>
+  </include>
+
+  <!-- New Eagle Raptor DBW Interface -->
+  <include file="$(find-pkg-share raptor_dbw_interface_autoware)/launch/raptor_dbw_interface.launch.py">
+      <arg name="raptor_dbw_interface_config" value="$(var raptor_dbw_interface_config_path)"/>
+  </include>
 </launch>

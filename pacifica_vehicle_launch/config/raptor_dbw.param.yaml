@@ -1,0 +1,31 @@
+/**:
+  ros__parameters:
+  # Kvaser node parameters
+    hardware_id: 18205  # 22024
+    circuit_id: 0
+    bit_rate: 500000
+    enable_echo: false
+  # DBW joystick node
+    ignore: false
+    enable: true
+    svel: 250.0  # maximum steering angle velocity
+  # Shared with DBW CAN node
+    max_steer_angle: 470.0
+  # joy node
+    device_id: 0
+    #device_name: "/dev/input/js0"
+    deadzone: 0.5
+    autorepeat_rate: 20.0
+    sticky_buttons: false
+    coalesce_interval_ms: 1
+  # speed control (closed loop) mode
+    raw_control: True
+    max_accelerator_pedal: 100.0
+    max_speed: 10.0
+    #min_speed: -10.0
+    max_accel: 1.0  # [m/s^2]
+    max_decel: 3.0  # [m/s^2]
+    speed_increment: 0.44704 # [m/s]. 0.44704 m/s = 1 MPH
+    max_jerk_accel: 1.0  # [m/s^3]
+    max_jerk_decel: 3.0  # [m/s^3] in reverse
+
